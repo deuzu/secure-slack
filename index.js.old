@@ -1,0 +1,100 @@
+const waitForElementToDisplay = (selector, time, callback) => {
+  console.log(`Looking for ${selector}`)
+
+  if (null != document.querySelector(selector)) {
+    console.log(`Found ${selector}!`)
+    callback()
+
+    return
+  }
+
+  setTimeout(function() {
+    console.log(`no ${selector} here... trying again in ${time}ms`)
+    waitForElementToDisplay(selector, time)
+  }, time)
+}
+
+// const main = () => {
+//   const emoButton = document.getElementById('#main_emo_menu')
+
+//   const encryptButton = document.createElement('button')
+//   const encryptText = document.createTextNode('encrypt')
+//   const encryptCss = {
+//     'height': '40px',
+//     'line-height': '40px',
+//     'top': 'auto',
+//     'bottom': '24px',
+//     'right': '8px',
+//     'position': 'absolute',
+//     'z-index': '1',
+//     'width': '30px',
+//     'text-align': 'center',
+//     'color': '#616061',
+//     'opacity': '1',
+//     '-webkit-transform': 'scale(1)',
+//     '-moz-transform': 'scale(1)',
+//     '-ms-transform': 'scale(1)',
+//     'transform': 'scale(1)',
+//     '-webkit-transition': 'all 50ms ease-out 0s',
+//     '-moz-transition': 'all 50ms ease-out 0s',
+//     'transition': 'all 50ms ease-out 0s',
+//     'background': '0 0',
+//     'border': 'none',
+//     'padding': '0',
+//     '-webkit-appearance': 'none',
+//     '-moz-appearance': 'none',
+//     'appearance': 'none',
+//     'font-size': 'inherit',
+//     'font-weight': 'inherit',
+//     'outline': '0',
+//   }
+
+//   // to replace with add class 'btn_unstyle'
+
+//   let encryptStyle = ''
+
+//   Object.keys(encryptCss).forEach((cssKey) => {
+//     encryptStyle = `${cssKey}:${encryptCss[cssKey]};${encryptStyle}`
+//   })
+
+//   encryptButton.setAttribute('style', encryptStyle)
+//   encryptButton.appendChild(encryptText)
+//   encryptButton.onclick = function() { encryptMessage() }
+
+//   console.log(encryptButton)
+
+//   emoButton.parentNode.insertBefore(encryptButton, emoButton)
+// }
+
+// const main = () => {
+//   const form = document.querySelector('#msg_form')
+//   const messageInput = document.querySelector('#msg_input > div')
+
+  // console.log(form, messageInput)
+
+  // form.onsubmit = function(e) {
+  //   console.log('form submitted yey')
+
+  //   e = e || window.event
+  //   e.preventDefault()
+
+  //   messageInput.innerHTML = 'test123321'
+
+  //   TS.view.submit()
+  // }
+
+  // form.setAttribute('onsubmit', 'alert(\'yeeeeay\');TS.view.submit();return false;')
+
+  // console.log(form)
+
+//   messageInput.innerHTML = 'test123321'
+
+//   form.addEventListener('submit', function() {
+//     console.log('works')
+//   })
+// }
+
+// const encryptMessage = () => {}
+
+// console.log('Restarting...')
+// waitForElementToDisplay('#msg_form', 500, main)
