@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Secure Slack",
+  "version": "1.0",
+  "description": "Adds the option to send encrypted private message on Slack using keybase.io",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.slack.com/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
