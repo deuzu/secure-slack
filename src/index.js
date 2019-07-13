@@ -1,1 +1,1 @@
-console.log('Restarting...');
+console.log('Restarting...')
